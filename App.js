@@ -10,7 +10,7 @@ export default function App() {
       <Image source={{uri: "https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492__340.jpg"}} 
       style={styles.url_image} />
       
-      <TextInput placeholder="이름을 입력해주세요" />
+      <TextInput placeholder="이름을 입력해주세요" /> 
       
       <Button title="click" onPress={()=>{console.log("clicked");}}/>
 
