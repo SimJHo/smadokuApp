@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
-import Main from './src/pages/main';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Layout from './src/components/Layout';
+import React from 'react';
+import Home from './src/pages/Home';
+import TestPage from './src/pages/TestPage';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const AppInner = (props) => {
+  const Stack = createNativeStackNavigator();
+
   return (
-    <BrowserRouter basename={'/'}>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path={'/home'} element={<Main />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Home'>
+        <Stack.Screen name='Home' component={Home} />
+        <Stack.Screen name='TestPage' component={TestPage} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
